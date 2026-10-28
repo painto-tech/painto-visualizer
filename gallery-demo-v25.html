@@ -16,7 +16,8 @@ header small{font-weight:400;color:#94a3b8}
 #stage canvas{width:100%;display:block}
 #stage img{width:100%;display:block}
 #msg{margin:10px 0;font-weight:600;min-height:22px}
-#selInfo{margin:8px 0;font-weight:600}
+#selInfo{margin:8px 0;font-weight:600;font-size:17px;line-height:1.45}
+#selInfo .selCode{font-weight:700}
 #selInfo small{color:#64748B;font-weight:400}
 #swatches{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .sw{width:44px;height:44px;border-radius:8px;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:pointer;padding:0}
@@ -130,7 +131,7 @@ function pickColor(c, el){
  cur = c; painted = true; showAfter = true;
  document.querySelectorAll('.sw').forEach(x=>x.classList.remove('on'));
  if(el) el.classList.add('on');
- document.getElementById('selInfo').innerHTML = c[1] + ' <small>' + c[0] + ' · ' + c[2] + '</small>';
+ document.getElementById('selInfo').innerHTML = '<div>' + c[1] + '</div><div class="selCode">Color Code: ' + c[0] + '</div>';
  msg.textContent = 'Painted! Try another color, Clear, or Save 🎉';
  render();
 }
